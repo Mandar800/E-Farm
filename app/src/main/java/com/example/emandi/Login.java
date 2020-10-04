@@ -36,6 +36,7 @@ import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResponse;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -111,7 +112,7 @@ public class Login extends AppCompatActivity {
                     locationRequest = LocationRequest.create();
                     locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
                     locationRequest.setInterval(5000);
-                    locationRequest.setFastestInterval(2000);
+                    locationRequest.setFastestInterval(1000);
 
                     LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder().addLocationRequest(locationRequest);
                     builder.setAlwaysShow(true);
@@ -156,32 +157,28 @@ public class Login extends AppCompatActivity {
     @SuppressLint("MissingPermission")
     public void getLocatin() {
 
-        locationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
-            @Override
-            public void onComplete(@NonNull Task<Location> task) {
-                Location loc = task.getResult();
-                //Toast.makeText(getApplicationContext(),loc.toString(),Toast.LENGTH_LONG).show();
-                if (loc != null) {
+        locationProviderClient.getLastLocation()
+                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location loc) {
+                        // Got last known location. In some rare situations this can be null.
+                        if (loc != null) {
+                            Geocoder geocoder = new Geocoder(Login.this, Locale.getDefault());
+                            try {
+                                List<Address> addresses = geocoder.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1);
+                                StringBuilder add = new StringBuilder();
+                                add.append(addresses.get(0).getAddressLine(0));
+                                //add.append(addresses.get(0).getSubLocality());
+                                //add.append(addresses.get(0).getLocality());
+                                //add.append(addresses.get(0).getCountryName());
 
-                    Geocoder geocoder = new Geocoder(Login.this, Locale.getDefault());
-                    try {
-                        List<Address> addresses = geocoder.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1);
-                        StringBuilder add = new StringBuilder();
-                        add.append(addresses.get(0).getAddressLine(0));
-                        //add.append(addresses.get(0).getSubLocality());
-                        //add.append(addresses.get(0).getLocality());
-                        //add.append(addresses.get(0).getCountryName());
-
-                        location.setText(add.toString());
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                                location.setText(add.toString());
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
-                }else{
-                    Toast.makeText(getApplicationContext(),"else",Toast.LENGTH_LONG).show();
-                }
-
-            }
-        });
+                });
     }
 
     private void signup() {
@@ -258,7 +255,7 @@ public class Login extends AppCompatActivity {
                             }
                             progressDialog.dismiss();
                         } catch (JSONException e) {
-                            Toast.makeText(getApplicationContext(), "error", Toast.LENGTH_LONG).show();
+
                             e.printStackTrace();
                             progressDialog.dismiss();
                         }
@@ -268,7 +265,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         error.printStackTrace();
-                        Toast.makeText(getApplicationContext(), "Error in php", Toast.LENGTH_LONG).show();
+
                         progressDialog.dismiss();
                     }
                 }) {
@@ -328,7 +325,7 @@ public class Login extends AppCompatActivity {
 
         }else{
             if(un.equals("") || pass.equals("")){
-                Toast.makeText(this,"Username or Password is Blank",Toast.LENGTH_LONG).show();
+
                 alert.setText("Username or Password Cannot be Blank");
                 alert.setVisibility(View.VISIBLE);
             }else
@@ -377,7 +374,7 @@ public class Login extends AppCompatActivity {
                     }
                     progressDialog.dismiss();
                     } catch (JSONException e) {
-                    Toast.makeText(getApplicationContext(), "error", Toast.LENGTH_LONG).show();
+
                     e.printStackTrace();
                     progressDialog.dismiss();
                 }
