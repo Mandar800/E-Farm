@@ -10,6 +10,7 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -66,9 +67,20 @@ public class Login extends AppCompatActivity {
     FusedLocationProviderClient locationProviderClient;
     LocationRequest locationRequest;
     public static final int REQUEST_CHECK_SETTING = 1001;
+    public static final String SHARED_PREFS = "sharedPrefs";
+    SharedPreferences sharedPreferences ;
+    SharedPreferences.Editor editor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        //Toast.makeText(this,sharedPreferences.getString("un",""),Toast.LENGTH_LONG).show();
+        if(sharedPreferences.getString("un","")!=""){
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
@@ -242,6 +254,12 @@ public class Login extends AppCompatActivity {
 
                             if (message.equals("success")) {
                                 //Toast.makeText(getApplicationContext(), jsonarray.toString(), Toast.LENGTH_LONG).show();
+                                editor.putString("un",un);
+                                editor.putString("email",mail);
+                                editor.putString("no",no);
+                                editor.putString("add",add);
+                                editor.apply();
+                                //Toast.makeText(Login.this,sharedPreferences.getString("un",""),Toast.LENGTH_LONG).show();
                                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(i);
                             } else if(message.equals("duplicate email")) {
@@ -361,9 +379,18 @@ public class Login extends AppCompatActivity {
 
                     String success = jsonobject.getString("success");
                     JSONArray jsonarray = jsonobject.getJSONArray("login");
+                    JSONObject jo = jsonarray.getJSONObject(0);
 
                     if(success.equals("1")) {
                         //Toast.makeText(getApplicationContext(), jsonarray.toString(), Toast.LENGTH_LONG).show();
+                        editor.putString("un",jo.getString("Name"));
+                        editor.putString("email",jo.getString("email"));
+                        editor.putString("id",jo.getString("id"));
+                        editor.putString("no",jo.getString("no"));
+                        editor.putString("add",jo.getString("add"));
+                        editor.apply();
+                        //Toast.makeText(Login.this,sharedPreferences.getString("un",""),Toast.LENGTH_LONG).show();
+
                         Intent i = new Intent(getApplicationContext(),MainActivity.class);
                         startActivity(i);
                     }
