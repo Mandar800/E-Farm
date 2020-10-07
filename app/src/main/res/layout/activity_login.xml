@@ -76,18 +76,20 @@
             tools:layout_editor_absoluteY="194dp" />
 
         <com.google.android.material.textfield.TextInputLayout
-
+            android:id="@+id/Username_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="286dp">
+            tools:layout_editor_absoluteY="286dp"
+            android:visibility="gone"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/Username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Username"
+                android:hint="Name"
                 android:textColorHint="@color/colorAccent"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -97,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             tools:layout_editor_absoluteX="1dp"
-            android:visibility="gone"
+            android:visibility="visible"
             tools:layout_editor_absoluteY="286dp"
             android:id="@+id/emaillayout"
             android:animateLayoutChanges="true"

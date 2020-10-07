@@ -11,4 +11,11 @@ public class Profile_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_activity);
     }
+    public void onBackPressed() {
+        finish();
+    }
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
 }

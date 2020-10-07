@@ -60,7 +60,7 @@ public class Login extends AppCompatActivity {
     EditText location;
     Button signin, signup, locationButoon;
     TextView alert;
-    TextInputLayout email_lay, num_lay;
+    TextInputLayout email_lay, num_lay,user_lay;
     LinearLayoutCompat form;
     String un, pass,mail,no,add;
     public RequestQueue mQueue;
@@ -92,6 +92,7 @@ public class Login extends AppCompatActivity {
         number = findViewById(R.id.num);
         or = findViewById(R.id.or);
         hello = findViewById(R.id.hello);
+        user_lay=findViewById(R.id.Username_layout);
         welcome = findViewById(R.id.welcome);
         signintext = findViewById(R.id.signtext);
         locationButoon = findViewById(R.id.locationButton);
@@ -194,7 +195,7 @@ public class Login extends AppCompatActivity {
     }
 
     private void signup() {
-        if(email_lay.getVisibility()==View.GONE){
+        if(num_lay.getVisibility()==View.GONE){
             location.setVisibility(View.VISIBLE);
             locationButoon.setVisibility(View.VISIBLE);
             hello.setText("Hello, Welcome!");
@@ -202,6 +203,7 @@ public class Login extends AppCompatActivity {
             signintext.setText("Sign up to continue");
             email_lay.setVisibility(View.VISIBLE);
             num_lay.setVisibility(View.VISIBLE);
+            user_lay.setVisibility(View.VISIBLE);
             form.removeView(or);
             form.removeView(signin);
             form.addView(or);
@@ -267,10 +269,6 @@ public class Login extends AppCompatActivity {
                                 alert.setVisibility(View.VISIBLE);
                                 alert.setText("Email Already Exists");
                             }
-                            else if(message.equals("duplicate username")){
-                                alert.setVisibility(View.VISIBLE);
-                                alert.setText("Username Already Exists");
-                            }
                             progressDialog.dismiss();
                         } catch (JSONException e) {
 
@@ -322,11 +320,11 @@ public class Login extends AppCompatActivity {
         return matcher.matches();
     }
     private void signin() {
-        un = username.getText().toString().trim();
+        mail = email.getText().toString().trim();
         pass  = password.getText().toString().trim();
 
         if(num_lay.getVisibility()==View.VISIBLE){
-            email_lay.setVisibility(View.GONE);
+            user_lay.setVisibility(View.GONE);
             locationButoon.setVisibility(View.GONE);
             num_lay.setVisibility(View.GONE);
             form.removeView(or);
@@ -334,7 +332,6 @@ public class Login extends AppCompatActivity {
             form.addView(or);
             form.addView(signup);
             alert.setVisibility(View.GONE);
-
             location.setVisibility(View.GONE);
             hello.setText("Hello,");
             welcome.setText("Welcome Back!");
@@ -342,9 +339,13 @@ public class Login extends AppCompatActivity {
             signintext.setText("Sign in to continue");
 
         }else{
-            if(un.equals("") || pass.equals("")){
+            if(!isEmailValid(mail)){
+                alert.setText("Invalid Email");
+                alert.setVisibility(View.VISIBLE);
+            }else
+            if(mail.equals("") || pass.equals("")){
 
-                alert.setText("Username or Password Cannot be Blank");
+                alert.setText("Email or Password Cannot be Blank");
                 alert.setVisibility(View.VISIBLE);
             }else
             if(alert.getVisibility()==View.VISIBLE){
@@ -360,7 +361,7 @@ public class Login extends AppCompatActivity {
 
     private void checklogin() {
 
-        un = username.getText().toString().trim();
+        mail = email.getText().toString().trim();
         pass  = password.getText().toString().trim();
 
 
@@ -418,7 +419,7 @@ public class Login extends AppCompatActivity {
             @Override
             protected Map<String,String> getParams(){
                 HashMap<String,String> param = new HashMap<String,String>();
-                param.put("email",un);
+                param.put("email",mail);
                 param.put("password",pass);
 
                 return param;

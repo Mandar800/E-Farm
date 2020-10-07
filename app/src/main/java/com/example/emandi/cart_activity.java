@@ -35,7 +35,10 @@ public class cart_activity extends AppCompatActivity {
         totalPrice.setText(Integer.toString(Price)+" Rs");
 
         String address = sharedPreferences.getString("add","");
+        String Name = sharedPreferences.getString("un","");
+        TextView cartName = findViewById(R.id.cartName);
         TextView add = findViewById(R.id.addresscart);
+        cartName.setText(Name);
         add.setText(address);
 
     }

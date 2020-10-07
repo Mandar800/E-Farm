@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".cart_activity"
     android:orientation="vertical"
-    android:layout_margin="5dp"
+    android:padding="5dp"
+    android:background="@color/greybg"
     >
 
     <androidx.cardview.widget.CardView
@@ -32,9 +33,10 @@
               android:weightSum="10"
               >
               <TextView
+                  android:id="@+id/cartName"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="Madnar Salvi"
+                  android:text=""
                   android:layout_margin="8dp"
                   android:textSize="20dp"
                   android:textStyle="bold"
@@ -50,11 +52,11 @@
                   >
 
                   <Button
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
+                      android:layout_width="60dp"
+                      android:layout_height="40dp"
                       android:textColor="@color/WHite"
-                      android:text="Change"
-                      android:elevation="3dp"
+                      android:text="edit"
+                      android:elevation="2dp"
                       android:background="@drawable/add_button"
                       />
 
@@ -207,7 +209,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/add_button"
         android:textColor="@color/WHite"
-        android:text="Procede to Checkout"
+        android:text="Confirm Order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
