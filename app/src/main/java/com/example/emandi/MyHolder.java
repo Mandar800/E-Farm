@@ -8,6 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.HashMap;
+
 public class MyHolder extends RecyclerView.ViewHolder {
     ImageView mImgView;
     TextView mTitle,mCost,Qty;
@@ -33,17 +35,15 @@ public class MyHolder extends RecyclerView.ViewHolder {
             this.Qty.setVisibility(View.VISIBLE);
         }
 
-        add.setOnClickListener(new View.OnClickListener() {
+       /* add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                int Quant = Integer.parseInt((String) Qty.getText());
-                Quant++;
-                Qty.setText(Integer.toString(Quant));
+                Qty.setText("1");
                 add.setVisibility(View.INVISIBLE);
                 plus.setVisibility(View.VISIBLE);
                 minus.setVisibility(View.VISIBLE);
                 Qty.setVisibility(View.VISIBLE);
+
             }
         });
 
@@ -70,7 +70,7 @@ public class MyHolder extends RecyclerView.ViewHolder {
                 Qty.setText(Integer.toString(quant));
             }
         });
-
+        */
 
     }
 }

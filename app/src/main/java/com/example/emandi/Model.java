@@ -1,8 +1,11 @@
 package com.example.emandi;
 
-public class Model {
+import java.io.Serializable;
+
+public class Model implements Serializable {
     private String  title , Cost;
     private int img;
+    private int quant;
 
     public String getTitle() {
         return title;
@@ -26,5 +29,13 @@ public class Model {
 
     public void setImg(int img) {
         this.img = img;
+    }
+
+    public int getQuant() {
+        return quant;
+    }
+
+    public void setQuant(int quant) {
+        this.quant = quant;
     }
 }

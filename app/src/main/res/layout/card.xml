@@ -75,7 +75,7 @@
             android:layout_below="@+id/cost"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/plus_minus_buttons"
@@ -90,7 +90,7 @@
             android:layout_width="37dp"
             android:layout_height="37dp"
             android:layout_below="@+id/cost"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="10dp"
             android:layout_toLeftOf="@id/quantity"
             android:background="@drawable/plus_minus_buttons"
 
@@ -104,9 +104,11 @@
             android:layout_width="25dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/cost"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="5dp"
+           android:layout_marginHorizontal="5dp"
+
+            android:layout_marginTop="15dp"
+
+            android:layout_marginBottom="3dp"
             android:layout_toStartOf="@id/plus"
             android:layout_toLeftOf="@id/plus"
             android:gravity="center_horizontal"
