@@ -30,7 +30,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".cart_activity"
-            android:label="Cart"
+            android:label="My Cart"
             android:parentActivityName=".MainActivity"
 
             />

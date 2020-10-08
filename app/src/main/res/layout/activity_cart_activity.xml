@@ -176,7 +176,7 @@
         android:padding="5dp"
         android:weightSum="10"
         android:elevation="2dp"
-        app:layout_constraintBottom_toTopOf="@id/button"
+        app:layout_constraintBottom_toTopOf="@id/order"
         >
 
         <TextView
@@ -204,7 +204,7 @@
             tools:ignore="RtlCompat" />
     </LinearLayout>
     <Button
-        android:id="@+id/button"
+        android:id="@+id/order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/add_button"

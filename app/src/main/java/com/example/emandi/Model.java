@@ -6,6 +6,7 @@ public class Model implements Serializable {
     private String  title , Cost;
     private int img;
     private int quant;
+    private int id;
 
     public String getTitle() {
         return title;
@@ -37,5 +38,13 @@ public class Model implements Serializable {
 
     public void setQuant(int quant) {
         this.quant = quant;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
