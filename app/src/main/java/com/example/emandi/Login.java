@@ -31,7 +31,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResponse;
@@ -81,6 +83,7 @@ public class Login extends AppCompatActivity {
             Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
         }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
@@ -121,15 +124,30 @@ public class Login extends AppCompatActivity {
         locationButoon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if (ActivityCompat.checkSelfPermission(Login.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                     locationRequest = LocationRequest.create();
                     locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
                     locationRequest.setInterval(5000);
                     locationRequest.setFastestInterval(1000);
 
+
+                    LocationCallback mLocationCallback = new LocationCallback() {
+                        @Override
+                        public void onLocationResult(LocationResult locationResult) {
+                            if (locationResult == null) {
+                                return;
+                            }
+                            for (Location location : locationResult.getLocations()) {
+                                if (location != null) {
+                                    //TODO: UI updates.
+                                }
+                            }
+                        }
+                    };
+                    LocationServices.getFusedLocationProviderClient(getApplicationContext()).requestLocationUpdates(locationRequest, mLocationCallback, null);
                     LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder().addLocationRequest(locationRequest);
                     builder.setAlwaysShow(true);
-
                     Task<LocationSettingsResponse> result = LocationServices.getSettingsClient(getApplicationContext()).checkLocationSettings(builder.build());
                     result.addOnCompleteListener(new OnCompleteListener<LocationSettingsResponse>() {
                         @Override
@@ -155,9 +173,7 @@ public class Login extends AppCompatActivity {
                         }
                     });
 
-
-
-                    getLocatin();
+                    getLocation();
                 } else {
                     ActivityCompat.requestPermissions(Login.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
                 }
@@ -168,7 +184,7 @@ public class Login extends AppCompatActivity {
     }
 
     @SuppressLint("MissingPermission")
-    public void getLocatin() {
+    public void getLocation() {
 
         locationProviderClient.getLastLocation()
                 .addOnSuccessListener(this, new OnSuccessListener<Location>() {
@@ -432,8 +448,24 @@ public class Login extends AppCompatActivity {
                 return params;
             }
         };
-
         mQueue.add(sr);
+    }
+    int backButtonCount=0;
+    @Override
+    public void onBackPressed()
+    {
 
+        if(backButtonCount >= 1)
+        {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+        else
+        {
+            Toast.makeText(this, "Press the back button once again to close the application.", Toast.LENGTH_SHORT).show();
+            backButtonCount++;
+        }
     }
 }

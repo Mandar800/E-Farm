@@ -1,9 +1,12 @@
 package com.example.emandi;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -24,11 +27,20 @@ public class Profile_activity extends AppCompatActivity {
         num.setText(sharedPreferences.getString("no",""));
         add.setText(sharedPreferences.getString("add",""));
 
+        CardView logout = findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-
-
-
-
+                SharedPreferences preferences =getSharedPreferences(Login.SHARED_PREFS,MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.clear();
+                editor.apply();
+                finishAffinity();
+                Intent i = new Intent(getApplicationContext(),Login.class);
+                startActivity(i);
+            }
+        });
 
     }
     public void onBackPressed() {

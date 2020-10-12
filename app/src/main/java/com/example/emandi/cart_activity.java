@@ -34,6 +34,7 @@ public class cart_activity extends AppCompatActivity {
     public RequestQueue mQueue;
     public int order_id;
     HashMap<Integer,Integer> cartlist ;
+    ArrayList<Model> list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,7 @@ public class cart_activity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(Login.SHARED_PREFS,MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Bundle extra =  getIntent().getBundleExtra("cart");
-        final ArrayList<Model> list = (ArrayList<Model>) extra.getSerializable("objects");
+        list = (ArrayList<Model>) extra.getSerializable("objects");
         if(list.isEmpty()){
             setContentView(R.layout.empty_cart);
             Button shop = findViewById(R.id.shopnow);
@@ -103,9 +104,11 @@ public class cart_activity extends AppCompatActivity {
                     String success = jsonobject.getString("success");
 
                     if(success.equals("1")) {
-                        Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_LONG).show();
-
-
+                        //Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_LONG).show();
+                        list.clear();
+                        cartlist.clear();
+                        MainActivity.CLEAR_CART=1;
+                        setContentView(R.layout.order_placed);
                         //Toast.makeText(Login.this,sharedPreferences.getString("un",""),Toast.LENGTH_LONG).show();
                     }
                     else{
@@ -115,7 +118,7 @@ public class cart_activity extends AppCompatActivity {
                     progressDialog.dismiss();
 
                 } catch (JSONException e) {
-
+                    Toast.makeText(getApplicationContext(), "Order Failed ", Toast.LENGTH_LONG).show();
                     e.printStackTrace();
                     progressDialog.dismiss();
                 }
