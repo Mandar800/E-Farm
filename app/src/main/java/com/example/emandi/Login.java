@@ -276,6 +276,7 @@ public class Login extends AppCompatActivity {
                                 editor.putString("email",mail);
                                 editor.putString("no",no);
                                 editor.putString("add",add);
+                                editor.putString("id",jsonobject.getString("id"));
                                 editor.apply();
                                 //Toast.makeText(Login.this,sharedPreferences.getString("un",""),Toast.LENGTH_LONG).show();
                                 Intent i = new Intent(getApplicationContext(), MainActivity.class);

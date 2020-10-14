@@ -35,42 +35,6 @@ public class MyHolder extends RecyclerView.ViewHolder {
             this.Qty.setVisibility(View.VISIBLE);
         }
 
-       /* add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Qty.setText("1");
-                add.setVisibility(View.INVISIBLE);
-                plus.setVisibility(View.VISIBLE);
-                minus.setVisibility(View.VISIBLE);
-                Qty.setVisibility(View.VISIBLE);
-
-            }
-        });
-
-        plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int quant = Integer.parseInt((String) Qty.getText());
-                quant++;
-                Qty.setText(Integer.toString(quant));
-            }
-        });
-
-        minus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int quant = Integer.parseInt((String) Qty.getText());
-                quant--;
-                if(quant<1){
-                    add.setVisibility(View.VISIBLE);
-                    plus.setVisibility(View.INVISIBLE);
-                    minus.setVisibility(View.INVISIBLE);
-                    Qty.setVisibility(View.INVISIBLE);
-                }
-                Qty.setText(Integer.toString(quant));
-            }
-        });
-        */
 
     }
 }

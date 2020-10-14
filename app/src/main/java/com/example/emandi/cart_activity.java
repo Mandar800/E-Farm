@@ -19,12 +19,14 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.Inet4Address;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -170,5 +172,10 @@ public class cart_activity extends AppCompatActivity {
 
     public void Checkout(View view) {
 
+    }
+
+    public void myordersIntent(View view) {
+        Intent i = new Intent(this,my_orders.class);
+        startActivity(i);
     }
 }

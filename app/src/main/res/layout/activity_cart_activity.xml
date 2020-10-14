@@ -58,6 +58,7 @@
                       android:textColor="@color/WHite"
                       android:text="edit"
                       android:elevation="2dp"
+
                       android:background="@drawable/add_button"
                       />
 

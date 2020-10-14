@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="10dp"
+    android:padding="5dp"
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:id="@+id/ordercardlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:padding="10dp"
+        android:background="@drawable/order_card_not_compleate"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="7">
+
+            <TextView
+                android:id="@+id/date"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="Date: 10-5-2020"
+                />
+            <TextView
+                android:id="@+id/status"
+                android:textSize="20dp"
+                android:textColor="@color/Pedding"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="Pending"
+                />
+
+            <TextView
+                android:id="@+id/ordercontent"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "10kg onions, 9kg potato's, 5kg tomato's"
+                android:visibility="gone"
+            />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/total"
+            android:gravity="right"
+            android:layout_width="0dp"
+            android:textStyle="bold"
+
+            android:layout_weight="3"
+            android:textSize="20dp"
+            android:text="200 Rs"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

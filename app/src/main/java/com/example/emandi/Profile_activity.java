@@ -28,6 +28,14 @@ public class Profile_activity extends AppCompatActivity {
         add.setText(sharedPreferences.getString("add",""));
 
         CardView logout = findViewById(R.id.logout);
+        CardView myorders = findViewById(R.id.myorders);
+        myorders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),my_orders.class);
+                startActivity(i);
+            }
+        });
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
