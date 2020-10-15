@@ -275,6 +275,7 @@ public class Login extends AppCompatActivity {
                                 editor.putString("un",un);
                                 editor.putString("email",mail);
                                 editor.putString("no",no);
+                                editor.putString("pass",pass);
                                 editor.putString("add",add);
                                 editor.putString("id",jsonobject.getString("id"));
                                 editor.apply();
@@ -404,6 +405,7 @@ public class Login extends AppCompatActivity {
                         editor.putString("un",jo.getString("Name"));
                         editor.putString("email",jo.getString("email"));
                         editor.putString("id",jo.getString("id"));
+                        editor.putString("pass",jo.getString("pass"));
                         editor.putString("no",jo.getString("no"));
                         editor.putString("add",jo.getString("add"));
                         editor.apply();

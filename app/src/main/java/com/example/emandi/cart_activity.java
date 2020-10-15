@@ -75,13 +75,20 @@ public class cart_activity extends AppCompatActivity {
             TextView add = findViewById(R.id.addresscart);
             cartName.setText(Name);
             add.setText(address);
-
             Button order = findViewById(R.id.order);
             order.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Order();
 
+                }
+            });
+            Button edit = findViewById(R.id.edit);
+            edit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(getApplicationContext(),edit_profile.class);
+                    startActivity(i);
                 }
             });
         }
