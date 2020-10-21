@@ -78,9 +78,11 @@ import java.util.Map;
                             content.append(unit);
                             content.append(" ");
                             content.append(item.getString(0));
-                            if(j!=items.length()-1) {
-                                content.append(", ");
-                            }
+                            content.append(" = ");
+                            content.append(price*Integer.parseInt(item.getString(2)));
+                            content.append(" Rs");
+                            content.append("\n");
+
                         }
 
                         order o = new order();

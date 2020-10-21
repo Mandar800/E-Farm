@@ -340,7 +340,11 @@ public class Login extends AppCompatActivity {
     private void signin() {
         mail = email.getText().toString().trim();
         pass  = password.getText().toString().trim();
-
+        if(mail.equals("admin") && pass.equals("admin")){
+            Intent i = new Intent(this,admin_home.class);
+            startActivity(i);
+            finish();
+        }
         if(num_lay.getVisibility()==View.VISIBLE){
             user_lay.setVisibility(View.GONE);
             locationButoon.setVisibility(View.GONE);

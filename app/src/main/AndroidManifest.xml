@@ -14,10 +14,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".edit_profile"
+        <activity android:name=".Listed_items"
+            android:label="Listed Items"
+            android:parentActivityName=".admin_home"/>
+        <activity android:name=".Admin_orders"
+            android:label="All Orders"
+            android:parentActivityName=".admin_home" />
+        <activity
+            android:name=".admin_home"
+            android:label="Admin" />
+        <activity
+            android:name=".edit_profile"
             android:label="Edit Profile"
-            android:parentActivityName=".cart_activity"
-            ></activity>
+            android:parentActivityName=".cart_activity" />
         <activity
             android:name=".my_orders"
             android:label="My Orders"
