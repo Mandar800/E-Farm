@@ -21,7 +21,6 @@ public class orderHolder extends RecyclerView.ViewHolder {
                 if(content.getVisibility()==View.VISIBLE){
                     content.setVisibility(View.GONE);
                 }
-
             }
         });
         this.parent= itemView.findViewById(R.id.ordercardlayout);

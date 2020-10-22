@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Listed_items"
+        <activity android:name=".admin_Listed_items"
             android:label="Listed Items"
             android:parentActivityName=".admin_home"/>
         <activity android:name=".Admin_orders"

@@ -6,7 +6,9 @@
     android:elevation="10dp"
     android:padding="5dp"
     app:cardCornerRadius="10dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+
+    >
 
     <LinearLayout
         android:id="@+id/ordercardlayout"
@@ -54,7 +56,7 @@
 
         <TextView
             android:id="@+id/total"
-            android:gravity="right"
+            android:gravity="center"
             android:layout_width="0dp"
             android:textStyle="bold"
 

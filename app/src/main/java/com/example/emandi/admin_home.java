@@ -1,10 +1,13 @@
 package com.example.emandi;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -26,7 +29,7 @@ public class admin_home extends AppCompatActivity {
         listed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),Listed_items.class);
+                Intent i = new Intent(getApplicationContext(), admin_Listed_items.class);
                 startActivity(i);
             }
         });
@@ -50,5 +53,22 @@ public class admin_home extends AppCompatActivity {
             Toast.makeText(this, "Press the back button once again to close the application.", Toast.LENGTH_SHORT).show();
             backButtonCount++;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.adminmenu,menu);
+        MenuItem logout = menu.findItem(R.id.adminlogout);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==R.id.adminlogout){
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
