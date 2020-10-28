@@ -2,13 +2,17 @@ package com.example.emandi;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -29,6 +33,11 @@ public class Profile_activity extends AppCompatActivity {
         mail.setText(sharedPreferences.getString("email",""));
         num.setText(sharedPreferences.getString("no",""));
         add.setText(sharedPreferences.getString("add",""));
+        ImageView lo = findViewById(R.id.logoutimg);
+        DrawableCompat.setTint(
+                DrawableCompat.wrap(lo.getDrawable()),
+                ContextCompat.getColor(this, R.color.grey)
+        );
 
         CardView logout = findViewById(R.id.logout);
         CardView myorders = findViewById(R.id.myorders);

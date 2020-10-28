@@ -9,4 +9,5 @@
     <color name="fontlight">#8C8C8C</color>
     <color name="redalert">#F44336</color>
     <color name="Pedding">#FFC107</color>
+    <color name="grey">#484848</color>
 </resources>
