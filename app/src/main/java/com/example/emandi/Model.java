@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Model implements Serializable {
     private String  title , Cost;
-    private int img;
+    private String img;
     private int quant;
     private int id;
 
@@ -24,14 +24,13 @@ public class Model implements Serializable {
         Cost = cost;
     }
 
-    public int getImg() {
+    public String getImg() {
         return img;
     }
 
-    public void setImg(int img) {
+    public void setImg(String img) {
         this.img = img;
     }
-
     public int getQuant() {
         return quant;
     }

@@ -40,7 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> implements Filtera
     public void onBindViewHolder(@NonNull final MyHolder holder, final int position) {
         holder.mTitle.setText(models.get(position).getTitle());
         holder.mCost.setText(models.get(position).getCost());
-        holder.mImgView.setImageResource(models.get(position).getImg());
+
         holder.Qty.setText(Integer.toString(models.get(position).getQuant()));
         holder.add.setOnClickListener(new View.OnClickListener() {
             @Override

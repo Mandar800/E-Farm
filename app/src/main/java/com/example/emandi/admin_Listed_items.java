@@ -5,13 +5,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,6 +39,15 @@ public class admin_Listed_items extends AppCompatActivity {
         myAdapter = new admin_item_adapter(this,models);
         mRecyclerView.setAdapter(myAdapter);
         getData();
+
+        FloatingActionButton add = findViewById(R.id.additem);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),admin_edit_item.class);
+                startActivity(i);
+            }
+        });
 
     }
 
@@ -66,7 +78,7 @@ public class admin_Listed_items extends AppCompatActivity {
                                 m.setCost(cost);
                                 m.setId(id);
                                 m.setQuant(0);
-                                m.setImg(R.drawable.onions);
+
 
                                 models.add(m);
                             }
