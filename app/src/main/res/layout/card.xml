@@ -18,6 +18,7 @@
             android:layout_width="125dp"
             android:layout_height="125dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginVertical="10dp"
             android:id="@+id/image"
             android:src="@mipmap/ic_launcher"
             />

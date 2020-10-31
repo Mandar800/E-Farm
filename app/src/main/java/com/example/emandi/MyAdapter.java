@@ -1,6 +1,9 @@
 package com.example.emandi;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +43,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> implements Filtera
     public void onBindViewHolder(@NonNull final MyHolder holder, final int position) {
         holder.mTitle.setText(models.get(position).getTitle());
         holder.mCost.setText(models.get(position).getCost());
+        byte[] decodedString = Base64.decode(models.get(position).getImg(), Base64.DEFAULT);
+        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+        holder.mImgView.setImageBitmap(decodedByte);
 
         holder.Qty.setText(Integer.toString(models.get(position).getQuant()));
         holder.add.setOnClickListener(new View.OnClickListener() {

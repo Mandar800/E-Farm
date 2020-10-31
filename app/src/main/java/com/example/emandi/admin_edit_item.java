@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -41,6 +42,7 @@ public class admin_edit_item extends AppCompatActivity {
     String name , cost , imgstring;
     Bitmap bitmap;
     RequestQueue mQueue;
+    Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,12 +56,15 @@ public class admin_edit_item extends AppCompatActivity {
         rs = findViewById(R.id.costRs);
         unit = findViewById(R.id.costUnit);
         alert = findViewById(R.id.alertitem);
-        Intent i = getIntent();
+        i = getIntent();
         if(i.hasExtra("ID")){
             title.setText(i.getStringExtra("title"));
             String cost = i.getStringExtra("cost");
             String Rs = cost.substring(0,cost.indexOf("R")).trim();
             String Unit = cost.substring(cost.indexOf("/")+1).trim();
+            byte[] decodedString = Base64.decode(i.getStringExtra("img"), Base64.DEFAULT);
+            bitmap = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            img.setImageBitmap(bitmap);
             rs.setText(Rs);
             unit.setText(Unit);
         }else{
@@ -128,21 +133,22 @@ public class admin_edit_item extends AppCompatActivity {
                     JSONObject jsonobject = new JSONObject(response);
 
                     String success = jsonobject.getString("success");
-
+                    Toast.makeText(getApplicationContext(), success, Toast.LENGTH_LONG).show();
                     if(success.equals("1")) {
-                        Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_LONG).show();
                         finish();
                     }
                     else{
-                        Toast.makeText(getApplicationContext(), "item insert Failed ", Toast.LENGTH_LONG).show();
-
+                        //Toast.makeText(getApplicationContext(), "item insert Failed ", Toast.LENGTH_LONG).show();
+                        finish();
                     }
                     progressDialog.dismiss();
 
                 } catch (JSONException e) {
-                    Toast.makeText(getApplicationContext(), "item Failed ", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "item Failed ", Toast.LENGTH_LONG).show();
                     e.printStackTrace();
                     progressDialog.dismiss();
+                    finish();
                 }
 
             }
@@ -150,16 +156,22 @@ public class admin_edit_item extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                Toast.makeText(getApplicationContext(), "Error Logging in check Internet Connection", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Error connecting in check Internet Connection", Toast.LENGTH_LONG).show();
                 progressDialog.dismiss();
             }
         }){
             @Override
             protected Map<String,String> getParams(){
                 HashMap<String,String> param = new HashMap<String,String>();
+                if(i.getStringExtra("ID")==null){
+                    param.put("id","-1");
+                }else{
+                    param.put("id",i.getStringExtra("ID"));
+                }
                 param.put("title",name);
                 param.put("cost",cost);
                 param.put("image",imgstring);
+
                 return param;
             }
 
@@ -172,11 +184,6 @@ public class admin_edit_item extends AppCompatActivity {
         };
 
         mQueue.add(sr);
-
-
-
-
-
 
     }
 

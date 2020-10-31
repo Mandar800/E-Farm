@@ -134,6 +134,7 @@ public class admin_order_adapter extends RecyclerView.Adapter<admin_order_holder
                     public void onErrorResponse(VolleyError error) {
                         error.printStackTrace();
                         progressDialog.dismiss();
+                        Toast.makeText(c, "Error connecting check Internet Connection", Toast.LENGTH_LONG).show();
                     }
                 }) {
                     @Override

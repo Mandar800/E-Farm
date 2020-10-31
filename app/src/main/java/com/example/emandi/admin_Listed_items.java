@@ -28,6 +28,7 @@ public class admin_Listed_items extends AppCompatActivity {
     admin_item_adapter myAdapter;
     ArrayList<Model> models ;
     public RequestQueue mQueue;
+    public static int FLAG = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +73,7 @@ public class admin_Listed_items extends AppCompatActivity {
                                 JSONObject jo = result.getJSONObject(i);
                                 String title = jo.getString("title");
                                 String cost = jo.getString("cost");
+                                String imgstr = jo.getString("img");
                                 int id = Integer.parseInt(jo.getString("item_id"));
 
                                 Model m = new Model();
@@ -79,7 +81,7 @@ public class admin_Listed_items extends AppCompatActivity {
                                 m.setCost(cost);
                                 m.setId(id);
                                 m.setQuant(0);
-
+                                m.setImg(imgstr);
 
                                 models.add(m);
                             }
@@ -113,5 +115,17 @@ public class admin_Listed_items extends AppCompatActivity {
             models.clear();
             getData();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(FLAG==1){
+            models.clear();
+            getData();
+            FLAG=0;
+        }
+
+
     }
 }
