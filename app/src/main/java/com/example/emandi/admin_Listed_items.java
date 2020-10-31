@@ -1,5 +1,6 @@
 package com.example.emandi;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,7 +46,7 @@ public class admin_Listed_items extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),admin_edit_item.class);
-                startActivity(i);
+                startActivityForResult(i,0);
             }
         });
 
@@ -102,5 +103,15 @@ public class admin_Listed_items extends AppCompatActivity {
         //Toast.makeText(this,"Done",Toast.LENGTH_LONG).show();
         mQueue.add(ObjRequest);
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode==0){
+            models.clear();
+            getData();
+        }
     }
 }
