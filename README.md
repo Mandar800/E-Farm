@@ -1,6 +1,5 @@
 # E-Farm
-Android Application to Buy Groceries online. Vendor will list product with price, Customers will place order from app and the groceries will be delivered to Home - 
-PHP MySQL Backend hosted on 000Webhost 
+E-Commerce Android Application to Buy Groceries Online. Vendor will list products with price, Customers will place order from app and the groceries will be delivered to Home.
 
 ### Tools and Libraries Used  
 - Android Studio 4.0
