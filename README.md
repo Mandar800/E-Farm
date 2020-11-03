@@ -30,6 +30,7 @@ PHP MySQL Backend hosted on 000Webhost
 ### Admin Side ScreenShots
 
 ### Suggested Improvements
+- Dashboard for Admin Home Activity
 - Login with Mobile Number
 - Check Strength of Password
 - Profile Picture for Customers 
