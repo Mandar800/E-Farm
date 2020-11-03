@@ -16,26 +16,26 @@ E-Commerce Android Application to Buy Groceries Online. Vendor will list product
 - Check Previous Orders and Order Status
 - Get Address By Location Sensor
 - Change Profile Information (Password, Email, Name,Mobile Number, Address)
-<br />
+
 ### Admin Features 
 - List Items for Sale 
 - Change Items Details (Name, Price, Availability)
 - Check All Placed Orders 
 - Change Status of Placed Orders
 - Delete Orders from database 
-<br />
+
 ### Customer Side ScreenShots
 <a href="url"><img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (4).jpeg" align="left" height="426" width="240" ></a>
 <a href="url"><img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (3).jpeg" align="left" height="426" width="240" ></a>
 <a href="url"><img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (7).jpeg" align="left" height="426" width="240" ></a>
 <a href="url"><img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (5).jpeg" align="left" height="426" width="240" ></a>
 <a href="url"><img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (6).jpeg" align="left" height="426" width="240" ></a>
-<br />
+
 ### Admin Side ScreenShots
 <a href="url"><img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (2).jpeg" align="left" height="426" width="240" ></a>
 <a href="url"><img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM.jpeg" align="left" height="426" width="240" ></a>
 <a href="url"><img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (1).jpeg" align="left" height="426" width="240" ></a>
-<br />
+
 ### Suggested Improvements
 - Dashboard for Admin Home Activity
 - Login with Mobile Number
