@@ -95,7 +95,7 @@ public class admin_order_adapter extends RecyclerView.Adapter<admin_order_holder
 
         }else{
             holder.status.setText("Delivered");
-            holder.status.setTextColor(ContextCompat.getColor(c,R.color.colorPrimary));
+            holder.status.setTextColor(ContextCompat.getColor(c,R.color.newgreen));
             holder.card.setBackgroundResource(R.drawable.order_card_compleate);
             holder.done.setVisibility(View.GONE);
         }

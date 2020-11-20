@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class admin_item_holder extends RecyclerView.ViewHolder {
     ImageView mImgView;
     TextView mTitle,mCost;
-    Button delete,edit;
+    ImageView delete,edit;
 
     public admin_item_holder(@NonNull View itemView) {
         super(itemView);

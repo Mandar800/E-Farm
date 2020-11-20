@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF5F5F</color>
     <color name="WHite">#FFFFFF</color>
     <color name="greybg">#E3E3E3E3</color>
+    <color name="newgreen">#28d1ab</color>
     <color name="font">#272727</color>
     <color name="fontlight">#8C8C8C</color>
     <color name="redalert">#F44336</color>

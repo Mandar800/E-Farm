@@ -40,7 +40,7 @@ public class orderAdapter extends RecyclerView.Adapter<orderHolder> {
         if(models.get(position).getStatus().equals("1")){
             holder.status.setTextColor(R.color.colorPrimary);
             holder.status.setText("Delivered");
-            holder.status.setTextColor(ContextCompat.getColor(c,R.color.colorPrimary));
+            holder.status.setTextColor(ContextCompat.getColor(c,R.color.newgreen));
             holder.parent.setBackgroundResource( R.drawable.order_card_compleate);
         }
 

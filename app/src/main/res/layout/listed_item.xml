@@ -64,30 +64,21 @@
             android:layout_weight="2"
 
             >
-            <Button
+            <ImageView
                 android:id="@+id/edit_item"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/add_button"
-                android:padding="0dp"
-                android:text="edit"
-                android:textColor="@color/WHite"
-                android:visibility="visible" />
-
-            <Button
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_edit"
+                android:visibility="visible"
+                />
+            <ImageView
                 android:id="@+id/delete_item"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
                 android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/add_button"
-                android:text="Delete"
-                android:textColor="@color/WHite"
-                android:visibility="visible" />
-
-
-
-
+                android:src="@drawable/ic_delete"
+                android:visibility="visible"
+                />
 
         </LinearLayout>
 

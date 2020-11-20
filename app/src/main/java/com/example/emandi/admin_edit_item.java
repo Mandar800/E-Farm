@@ -2,6 +2,8 @@ package com.example.emandi;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -35,8 +37,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class admin_edit_item extends AppCompatActivity {
-    ImageView img ;
-    Button retake , save ;
+    ImageView img ,retake;
+    Button save ;
     TextInputEditText title , rs, unit;
     TextView alert;
     String name , cost , imgstring;
@@ -49,7 +51,7 @@ public class admin_edit_item extends AppCompatActivity {
         setContentView(R.layout.activity_admin_edit_item);
 
         img = findViewById(R.id.editimage);
-        retake = findViewById(R.id.editpic);
+        retake = findViewById(R.id.editpicicon);
         save = findViewById(R.id.saveitem);
         mQueue = VolleySingleton.getInstance(this).getmRequestqueue();
         title = findViewById(R.id.edittitle);
@@ -57,6 +59,10 @@ public class admin_edit_item extends AppCompatActivity {
         unit = findViewById(R.id.costUnit);
         alert = findViewById(R.id.alertitem);
         i = getIntent();
+        DrawableCompat.setTint(
+                DrawableCompat.wrap(retake.getDrawable()),
+                ContextCompat.getColor(this, R.color.colorAccent)
+        );
         if(i.hasExtra("ID")){
             title.setText(i.getStringExtra("title"));
             String cost = i.getStringExtra("cost");
@@ -68,7 +74,7 @@ public class admin_edit_item extends AppCompatActivity {
             rs.setText(Rs);
             unit.setText(Unit);
         }else{
-            retake.setText("Take Picture");
+
             save.setText("Add Item");
         }
         retake.setOnClickListener(new View.OnClickListener() {
