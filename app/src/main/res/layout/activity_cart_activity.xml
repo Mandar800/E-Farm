@@ -18,6 +18,7 @@
         android:elevation="2dp"
         app:layout_constraintBottom_toTopOf="@id/linearLayout"
         app:cardCornerRadius="3dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -25,6 +26,7 @@
       <LinearLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:background="@drawable/gradientbg"
           android:orientation="vertical">
           <LinearLayout
               android:layout_width="match_parent"
@@ -37,6 +39,7 @@
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text=""
+                  android:textColor="@color/WHite"
                   android:layout_margin="8dp"
                   android:textSize="20dp"
                   android:textStyle="bold"
@@ -74,6 +77,7 @@
               android:layout_marginBottom="5dp"
               android:text="Address:"
               android:textStyle="bold"
+              android:textColor="@color/WHite"
               />
           <TextView
               android:id="@+id/addresscart"
@@ -81,6 +85,7 @@
               android:layout_height="wrap_content"
               android:layout_marginHorizontal="10dp"
               android:text=""
+              android:textColor="@color/WHite"
               android:layout_marginBottom="10dp"
 
               />
