@@ -27,18 +27,19 @@ E-Commerce Android Application to Buy Groceries Online. Vendor will list product
 
 ### Customer Side ScreenShots
 <p float="left">
-  <img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (3).jpeg" width="200" /> 
-  <img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (7).jpeg" width="200" />
-  <img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (5).jpeg" width="200" />
-  <img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (6).jpeg" width="200" />
+  <img src="https://github.com/Mandar800/E-Farm/blob/main/7.jpeg" width="200" /> 
+  <img src="https://github.com/Mandar800/E-Farm/blob/main/6.jpeg" width="200" />
+  <img src="https://github.com/Mandar800/E-Farm/blob/main/5.jpeg" width="200" />
+  <img src="https://github.com/Mandar800/E-Farm/blob/main/4.jpeg" width="200" />
+  <img src="https://github.com/Mandar800/E-Farm/blob/main/8.jpeg" width="200" />
 </p>
 
 ### Admin Side ScreenShots
 <p float="left">
-  <img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (4).jpeg" width="200" />
-  <img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (2).jpeg" width="200" />
-  <img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM.jpeg" width="200" /> 
-  <img src="https://github.com/Mandar800/E-Farm/blob/main/WhatsApp Image 2020-11-03 at 8.44.28 PM (1).jpeg" width="200" />
+  <img src="https://github.com/Mandar800/E-Farm/blob/main/2.jpeg" width="200" />
+  <img src="https://github.com/Mandar800/E-Farm/blob/main/3.jpeg" width="200" />
+  <img src="https://github.com/Mandar800/E-Farm/blob/main/1.jpeg" width="200" /> 
+ 
 </p>
 
 ### Suggested Improvements
