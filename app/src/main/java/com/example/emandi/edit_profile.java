@@ -182,7 +182,7 @@ public class edit_profile extends AppCompatActivity {
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
-        String url = "http://biometric-hook.000webhostapp.com/UpdateUser.php";
+        String url = "paste your link here";
 
         StringRequest sr = new StringRequest(Request.Method.POST,url, new Response.Listener<String>() {
             @Override

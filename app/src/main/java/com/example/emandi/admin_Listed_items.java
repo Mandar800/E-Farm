@@ -59,7 +59,7 @@ public class admin_Listed_items extends AppCompatActivity {
         progressDialog.show();
 
 
-        String url = "http://biometric-hook.000webhostapp.com/getData.php";
+        String url = "paste your link here";
 
         JsonObjectRequest ObjRequest = new JsonObjectRequest(Request.Method.GET,url,null,
                 new Response.Listener<JSONObject>() {

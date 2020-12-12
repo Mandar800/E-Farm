@@ -55,7 +55,7 @@ import java.util.Map;
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
-        String url = "http://biometric-hook.000webhostapp.com/myorders.php";
+        String url = "paste your link here";
 
         StringRequest sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override

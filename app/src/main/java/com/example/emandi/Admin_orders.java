@@ -57,7 +57,7 @@ public class Admin_orders extends AppCompatActivity {
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
-        String url = "http://biometric-hook.000webhostapp.com/AdminOrders.php";
+        String url = "paste your link here";
 
         StringRequest sr = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override

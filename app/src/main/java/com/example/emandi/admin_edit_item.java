@@ -130,7 +130,7 @@ public class admin_edit_item extends AppCompatActivity {
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
-        String url = "http://biometric-hook.000webhostapp.com/additem.php";
+        String url = "paste your link here";
 
         StringRequest sr = new StringRequest(Request.Method.POST,url, new Response.Listener<String>() {
             @Override
