@@ -49,6 +49,10 @@ E-Commerce Android Application to Buy Groceries Online. Vendor will list product
 - Profile Picture for Customers 
 - Block Customer from Platform
 <br />
+
+### Database Schema Structure 
+<I>id14954125_db_emandi.pdf</I> in files
+
 <div>Icons made by <a href="https://www.flaticon.com/authors/wanicon" title="wanicon">wanicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 <div>Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
